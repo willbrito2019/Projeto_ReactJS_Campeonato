@@ -18,12 +18,12 @@
 ## Como Executar
 
 **Backend:**
-   - cd campeonato-backend
+   - cd backend
    - npm install
    - npm run dev
 
 **Frontend:**
-   - cd campeonato-frontend
+   - cd frontend
    - npm install
    - npm start
 
