@@ -11,32 +11,8 @@ const Jogos = () => {
     golsCasa: "",
     golsFora: "",
   });
-
-    // Buscar times e jogos na API
-    //   useEffect(() => {
-    //     axios.get("http://localhost:5000/times").then((response) => {
-    //       setTimes(response.data);
-    //     });
-
-    //     axios.get("http://localhost:5000/jogos").then((response) => {
-    //       setJogos(response.data);
-    //     });
-    //   }, []);
-
-    // Cadastrar novo jogo
-    //   const adicionarJogo = (e) => {
-    //     e.preventDefault();
-    //     axios
-    //       .post("http://localhost:5000/jogos", novoJogo)
-    //       .then((response) => {
-    //         setJogos([...jogos, response.data]);
-    //         setNovoJogo({ timeCasa: "", timeFora: "", golsCasa: "", golsFora: "" });
-    //       })
-    //       .catch((error) => {
-    //         console.error("Erro ao adicionar jogo", error);
-    //       });
-    //   };
-    const adicionarJogo = async (e) => {
+  
+   const adicionarJogo = async (e) => {
         e.preventDefault();
         try {
             await axios.post("http://localhost:5000/jogos", novoJogo);
@@ -128,22 +104,7 @@ const Jogos = () => {
                 {jogo.timeFora?.nome}
             </GameItem>
             ))}
-        </GameList>
-
-            {/* {jogos.map((jogo, index) => (
-                <tr key={index}>
-                <TdEscudo>
-                    <Escudo src={jogo.timeCasa.escudo || "https://via.placeholder.com/30"} alt="Escudo" />
-                    {jogo.timeCasa.nome}
-                </TdEscudo>
-                    {jogo.golsCasa} x {jogo.golsFora}
-                <TdEscudo>
-                    <Escudo src={jogo.timeFora.escudo || "https://via.placeholder.com/30"} alt="Escudo" />
-                    {jogo.timeFora.nome}
-                </TdEscudo>
-                </tr>
-            ))} */}
-
+        </GameList>         
 
         </Container>
     );
